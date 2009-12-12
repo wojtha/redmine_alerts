@@ -1,0 +1,11 @@
+<ul>
+<% if alert.apply_to_all_projects?  %>
+<li><%= 'All' %></li>
+<% elsif alert.projects.any? %>
+<% alert.projects.each do |project| %>
+<li><%= link_to h(project.name), :controller => 'projects', :action => 'show', :id => project.identifier %></li>
+<% end %>
+<% else %>
+<li><%= 'None' %></li>
+<% end %>
+</ul>

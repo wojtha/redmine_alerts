@@ -1,0 +1,50 @@
+<p>
+  <b>Category:</b>
+  <%=h @alert.category.name %>
+</p>
+
+<p>
+  <b>Model:</b>
+  <%=h @alert.model %>
+</p>
+
+<% if false %>
+<p>
+  <b>Field:</b>
+  <%=h @alert.field %>
+</p>
+<% end %>
+
+<p>
+  <b>Watch:</b>
+  <%=h @alert.description %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%=h @alert.author %>
+</p>
+
+<p>
+  <b>Delta:</b>
+  <%=h @alert.delta %>
+</p>
+
+<p>
+  <b>Projects:</b>
+  <%= render :partial => 'projects', :locals => {:alert => @alert } %>
+</p>
+
+<p>
+  <b>Created on:</b>
+  <%= format_time(@alert.created_on) %>
+</p>
+
+<p>
+  <b>Updated on:</b>
+  <%= format_time(@alert.updated_on) %>
+</p>
+
+
+<%= link_to 'Edit', edit_alert_path(@alert) %> |
+<%= link_to 'Back', alerts_path %>

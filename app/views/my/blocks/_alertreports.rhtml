@@ -1,0 +1,26 @@
+<h3>Alert Reports</h3>
+
+<%
+reports = AlertReport.all(:conditions => ["alert_reports.archived <> 1 AND alerts.author_id = ?", User.current.id], :include => [:alert])
+col = Proc.new { |c,l| AlertReportsHelper::custom_color(c, l) }
+url = url_for( :controller => :my, :action => :page )
+
+%>
+<% if reports.any? %>
+	<table>
+	<% reports.each do |report| %>
+		<% cc = report.alert.category.color %>
+		<tr class="<%= cycle('odd', 'even') %>" >
+			<td><span style="padding:0 2px;color:<%= col.call(cc,0.30) %>;background-color:<%= col.call(cc,0.85) %>;border:1px solid <%= col.call(cc,0.70) %>"><%=h report.alert.category.name %>:</span></td>
+			<td><%= format_date(report.created_on) %>:</td>
+			<td><%= report.text %></td>
+	    	<td><%= link_to 'Archive', {:controller => :alert_reports, :action => :archive, :id => report.id, :back_url => url }, :confirm => 'Are you sure?', :method => :post, :class => 'icon icon-move' %></td>
+		</tr>
+	<% end %>
+	</table>
+<% else %>
+<p class="nodata">No reports</p>
+<% end %>
+<p>
+ <%= link_to 'View all reports', {:controller => :alert_reports, :action => :index } %>
+</p>

@@ -1,0 +1,23 @@
+<h2>My Alert Reports</h2>
+
+<table class="rtable">
+<% if @reports.any? %>
+<% @reports.each do |report| %>
+  <tr class="<%= cycle('odd', 'even') %>" style="color:#<%=h report.alert.category.color %>">
+    <td><%= format_date(report.created_on) %></td>
+    <td><%=h report.alert.category.name %>:</td>
+    <td><%= report.text %></td>
+    <td><%= link_to 'Archive', { :action => :archive, :id => report.id }, :confirm => 'Are you sure?', :method => :post, :class => 'icon icon-move' %></td>
+  </tr>
+<% end %>
+</table>
+<% else %>
+<p class="nodata">No reports</p>
+<% end %>
+<p>
+<%= link_to 'View all archived reports', { :action => :list_archived }, :class => 'icon icon-folder' %>
+</p>
+
+<% content_for :header_tags do %>
+  <%= stylesheet_link_tag "alerts.css", :plugin => "redmine_alerts", :media => "screen" %>
+<% end %>

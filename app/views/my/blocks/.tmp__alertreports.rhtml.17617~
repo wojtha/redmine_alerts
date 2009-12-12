@@ -1,0 +1,29 @@
+<h2>Alert Reports</h2>
+
+<% reports = AlertReport.all(:conditions => ["alert_reports.archived <> 1 AND alerts.author_id = ?", User.current.id], :include => [:alert]) %>
+<% if reports.any? %>
+<table>
+  <tr>
+    <th>Created on</th>
+    <th>Category</th>
+    <th>Report</th>
+    <th>Actions</th>
+  </tr>
+<% reports.each do |report| %>
+  <tr>
+    <td><%= format_date(report.created_on) %></td>
+    <td><%=h report.alert.category.name %></td>
+    <td><%=h report.text %></td>
+    <td><%= link_to 'Archive', {:controller => :alert_reports, :action => :archive, :id => report.id }, :confirm => 'Are you sure?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+<% else %>
+<p>No reports</p>
+<% end %>
+<div style="width: 50%">
+<%= link_to 'View reports', {:controller => :alert_reports, :action => :list } %>
+</div>
+<div style="width: 50%">
+<%= link_to 'View alerts', {:controller => :alerts, :action => :index } %>
+</div>

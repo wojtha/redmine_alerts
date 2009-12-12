@@ -1,0 +1,40 @@
+<p>
+<b><%= :author %></b><br />
+<%= @alert.author.name %>
+</p>
+<p>
+<%= f.label :category_id %><br />
+<%= f.select :category_id, collection_alert_categories_select %>
+</p>
+
+<% if false # DISABLED  vvv %>
+<p>
+<%= f.label :model %><br />
+<%= f.select :model, collection_models_select %>
+</p>
+<p>
+<%= f.label :field %><br />
+<%= f.select :field, collection_fields_select %>
+</p>
+<% end      # DISABLED  ^^^ %>
+
+<p>
+<%= f.label :rule %><br />
+<%= f.select :rule, collection_alert_rules_select %>
+</p>
+<p>
+<%= f.label :delta %><br />
+<%= f.text_field :delta, :size => 3 %>
+</p>
+<p>
+<%= f.label :all_projects %><br />
+<%= f.check_box :all_projects %>
+</p>
+<p>
+<label>Specific projects:</label>
+<ul>
+<% for project in User.current.projects  %>
+  <%= check_box_tag 'alert[project_ids][]', project.id, @alert.projects.include?(project) %><label><%= project.name  %></label>
+<% end %>
+</ul>
+</p>

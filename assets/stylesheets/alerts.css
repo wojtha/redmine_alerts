@@ -1,0 +1,17 @@
+.admin-cat-link {
+	padding-left: 30px !important;
+}
+table.atable {
+	margin-top: 1em;
+}
+table.atable th {
+	background-color:#EEEEEE;
+	padding:4px;
+	white-space:nowrap;
+}
+table.rtable {
+	margin-top: 0.5em;
+}
+table.rtable td {
+	padding: 8px;
+}

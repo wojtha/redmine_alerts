@@ -1,0 +1,31 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+one:
+  id: 1
+
+  model: MyString
+
+  category: 1
+
+  attribute: MyString
+
+  author: 1
+
+  delta: 1
+
+  all_projects: 1
+
+two:
+  id: 2
+
+  model: MyString
+
+  category: 1
+
+  attribute: MyString
+
+  author: 1
+
+  delta: 1
+
+  all_projects: 1
+

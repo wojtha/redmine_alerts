@@ -1,0 +1,19 @@
+<h2>My Archived Reports</h2>
+
+<table>
+<% if @reports.any? %>
+<% @reports.each do |report| %>
+  <tr style="color:#<%=h report.alert.category.color %>">
+    <td><%= format_date(report.created_on) %></td>
+    <td><%=h report.alert.category.name %>:</td>
+    <td><%= report.text %></td>
+    <td><%= link_to 'Mark as active', {:action => :unarchive, :id => report.id }, :confirm => 'Are you sure?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+<% else %>
+<p>No archived reports</p>
+<% end %>
+<div>
+<%= link_to 'View active reports', {:controller => :alert_reports, :action => :list } %>
+</div>

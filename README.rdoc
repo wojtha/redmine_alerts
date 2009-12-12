@@ -1,0 +1,14 @@
+= Redmine Alerts plugin
+
+Copyright (C) 2009  Vojtech Kusy
+
+== Version
+
+Initial development version
+
+== License
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License version 2
+
+See LICENSE.txt for more details.
