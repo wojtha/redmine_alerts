@@ -13,8 +13,9 @@ class CreateAlertCategories < ActiveRecord::Migration
       t.column :color, :string, :limit => 6, :default => ""
     end
 
-    AlertCategory.create :name => "Varování"
-    AlertCategory.create :name => "Poplach"
+    AlertCategory.create :name => "Alert", :color => "FF0000"
+    AlertCategory.create :name => "Warning", :color => "FF8C00"
+    AlertCategory.create :name => "Notice", :color => "3399CC"
   end
 
   def self.down

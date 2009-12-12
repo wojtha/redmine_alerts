@@ -19,6 +19,6 @@ class AlertCategory < ActiveRecord::Base
   has_many :alerts
 
   def is_builtin?
-    [1, 2].include? id
+    [1, 2, 3].include? id
   end
 end

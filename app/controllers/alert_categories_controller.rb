@@ -27,11 +27,11 @@ class AlertCategoriesController < ApplicationController
   end
 
   def update
-    logger.info params.inspect
-    if @category.is_builtin?
-      flash[:notice] = 'Built-in class can\'t be updated.'
-      redirect_to :action => 'index'
-    elsif @category.update_attributes(params[:alert_category])
+#    logger.info params.inspect
+#    if @category.is_builtin?
+#      flash[:notice] = 'Built-in class can\'t be updated.'
+#      redirect_to :action => 'index'
+    if @category.update_attributes(params[:alert_category])
       flash[:notice] = 'Category was successfully updated.'
       redirect_to :action => 'index'
     else
