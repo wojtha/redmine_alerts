@@ -1,9 +1,0 @@
-<fieldset>
-<legend>Alert plugin configuration</legend>
-<p><b>Purge archived alert reports older than</b> <%= text_field_tag 'settings[purge_archive_interval]', @settings['purge_archive_interval'], :size => 2 %> <b>days</b></p>
-</fieldset>
-<p class="icon22 icon22-settings admin-cat-link"><%= link_to 'Administer categories', { :controller => :alert_categories, :action => 'index' } %></p>
-
-<% content_for :header_tags do %>
-  <%= stylesheet_link_tag "alerts.css", :plugin => "redmine_alerts", :media => "screen" %>
-<% end %>

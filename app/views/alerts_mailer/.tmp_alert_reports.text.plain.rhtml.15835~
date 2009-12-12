@@ -1,3 +1,0 @@
-<% @reports.each do |report| -%>
-* <%= report.text %>
-<% end -%>

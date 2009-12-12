@@ -1,5 +1,0 @@
-<ul>
-<% @reports.each do |report| -%>
-  <li><%= report.text %></li>
-<% end -%>
-</ul>
