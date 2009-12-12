@@ -64,9 +64,9 @@ Redmine::Plugin.register :redmine_alerts do
     # http://perfectionlabstips.wordpress.com/2009/02/13/fixing-return-cant-jump-across-threads-error-in-ruby/
     User.current.alerts_allowed? && ! Thread.current[:_current_controller].nil? && [:alerts, :alert_reports].include?(Thread.current[:_current_controller])
   end
-  menu :top_menu, :alert_reports, { :controller => 'alert_reports', :action => 'index' }, :caption => :my_alerts_title, :if => Proc.new { User.current.alerts_allowed? }
-  menu :application_menu, :alert_reports, { :controller => 'alert_reports', :action => 'index' }, :caption => 'My Reports', :if => check_alerts_controller
-  menu :application_menu, :alerts, { :controller => 'alerts', :action => 'index' }, :caption => 'My Alerts',  :if => check_alerts_controller
+  menu :top_menu, :alert_reports, { :controller => 'alert_reports', :action => 'index' }, :caption => :title_my_alerts, :if => Proc.new { User.current.alerts_allowed? }
+  menu :application_menu, :alert_reports, { :controller => 'alert_reports', :action => 'index' }, :caption => :title_my_reports, :if => check_alerts_controller
+  menu :application_menu, :alerts, { :controller => 'alerts', :action => 'index' }, :caption => :title_my_alerts,  :if => check_alerts_controller
 end
 
 # ==== LOAD ALERT RULES

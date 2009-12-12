@@ -1,50 +1,43 @@
 <p>
-  <b>Category:</b>
+  <b><%= l(:field_category) %>:</b>
   <%=h @alert.category.name %>
 </p>
 
 <p>
-  <b>Model:</b>
+  <b><%= l(:field_entity) %>:</b>
   <%=h @alert.model %>
 </p>
 
-<% if false %>
 <p>
-  <b>Field:</b>
-  <%=h @alert.field %>
-</p>
-<% end %>
-
-<p>
-  <b>Watch:</b>
+  <b><%= l(:field_alert_description) %>:</b>
   <%=h @alert.description %>
 </p>
 
 <p>
-  <b>Author:</b>
+  <b><%= l(:field_author) %>:</b>
   <%=h @alert.author %>
 </p>
 
 <p>
-  <b>Delta:</b>
+  <b><%= l(:field_delta) %>:</b>
   <%=h @alert.delta %>
 </p>
 
 <p>
-  <b>Projects:</b>
+  <b><%= l(:field_projects) %>:</b>
   <%= render :partial => 'projects', :locals => {:alert => @alert } %>
 </p>
 
 <p>
-  <b>Created on:</b>
+  <b><%= l(:field_created_on) %>:</b>
   <%= format_time(@alert.created_on) %>
 </p>
 
 <p>
-  <b>Updated on:</b>
+  <b><%= l(:field_updated_on) %>:</b>
   <%= format_time(@alert.updated_on) %>
 </p>
 
 
-<%= link_to 'Edit', edit_alert_path(@alert) %> |
-<%= link_to 'Back', alerts_path %>
+<%= link_to l(:button_edit), edit_alert_path(@alert) %> |
+<%= link_to l(:button_back), alerts_path %>

@@ -1,4 +1,4 @@
-<h2>My Alert Reports</h2>
+<h2><%= l(:title_my_alert_reports) %></h2>
 
 <table class="rtable">
 <% if @reports.any? %>
@@ -7,15 +7,15 @@
     <td><%= format_date(report.created_on) %></td>
     <td><%=h report.alert.category.name %>:</td>
     <td><%= report.text %></td>
-    <td><%= link_to 'Archive', { :action => :archive, :id => report.id }, :confirm => 'Are you sure?', :method => :post, :class => 'icon icon-move' %></td>
+    <td><%= link_to(l(:button_archive), { :action => :archive, :id => report.id }, :confirm => l(:text_are_you_sure), :method => :post, :class => 'icon icon-move') %></td>
   </tr>
 <% end %>
 </table>
 <% else %>
-<p class="nodata">No reports</p>
+<p class="nodata"><%= :label_no_data %></p>
 <% end %>
 <p>
-<%= link_to 'View all archived reports', { :action => :list_archived }, :class => 'icon icon-folder' %>
+<%= link_to(l(:button_reports_archived_view_all), { :action => :list_archived }, :class => 'icon icon-folder') %>
 </p>
 
 <% content_for :header_tags do %>

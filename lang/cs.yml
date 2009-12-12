@@ -1,0 +1,35 @@
+# Redmine Alerts plugin
+# Language file for Rails version < 2.2.2
+
+title_my_alerts: Moje alerty
+title_my_alert_definitions: Moje definice alertů
+title_my_reports: Moje reporty
+title_my_alert_reports: Moje reporty
+title_my_archived_reports: Moje archivované reporty
+title_alert_plugin_configuration: Nastavení Alerts pluginu
+title_alert_categories_configuration: Administrace kategorií alertů a reportů
+title_category_new: Nová kategorie
+title_category_edit: Upravení kategorie
+title_alert_new: Nový alert
+title_alert_edit: Upravení alertu
+
+label_color: Barva
+label_specific_projects: Specifiké projekty
+
+field_projects: Projekty
+field_entity: Entita
+field_delta: Delta
+field_alert_description: Hlídá
+
+button_show: Ukázat
+button_add_new_category: Přidat novou kategorii
+button_back_to_plugin: Zpět do administrace pluginu
+button_reports_archived_view_all: Zobrazit všechny archivované reporty
+button_reports_active_view_all: Zobrazit všechny aktivní reporty
+button_reports_view_all: Zobrazit všechny reporty
+button_unarchive: Obnovit
+button_alert_add: Nový alert
+
+text_archived_reports_purge_warning: Prosím vezměte na vědomí, že reporty umístěné do tohoto adresáře jsou pravidelně mazány!
+text_alert_categories_configuration_description: Operace mazání kategorie se momentálně nestará o asociované alerty a reporty. Musíte vědět co děláte!
+text_general_built_in: vestavěné

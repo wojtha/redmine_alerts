@@ -1,4 +1,4 @@
-<h3>Alert Reports</h3>
+<h3><%= l(:title_my_reports) %></h3>
 
 <%
 reports = AlertReport.all(:conditions => ["alert_reports.archived <> 1 AND alerts.author_id = ?", User.current.id], :include => [:alert])
@@ -14,13 +14,13 @@ url = url_for( :controller => :my, :action => :page )
 			<td><span style="padding:0 2px;color:<%= col.call(cc,0.30) %>;background-color:<%= col.call(cc,0.85) %>;border:1px solid <%= col.call(cc,0.70) %>"><%=h report.alert.category.name %>:</span></td>
 			<td><%= format_date(report.created_on) %>:</td>
 			<td><%= report.text %></td>
-	    	<td><%= link_to 'Archive', {:controller => :alert_reports, :action => :archive, :id => report.id, :back_url => url }, :confirm => 'Are you sure?', :method => :post, :class => 'icon icon-move' %></td>
+	    	<td><%= link_to l(:button_archive), {:controller => :alert_reports, :action => :archive, :id => report.id, :back_url => url }, :confirm => l(:text_are_you_sure), :method => :post, :class => 'icon icon-move' %></td>
 		</tr>
 	<% end %>
 	</table>
 <% else %>
-<p class="nodata">No reports</p>
+<p class="nodata"><%= l(:label_no_data) %></p>
 <% end %>
 <p>
- <%= link_to 'View all reports', {:controller => :alert_reports, :action => :index } %>
+ <%= link_to l(:button_reports_view_all), {:controller => :alert_reports, :action => :index } %>
 </p>

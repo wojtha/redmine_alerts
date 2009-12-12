@@ -1,5 +1,0 @@
-<fieldset>
-<legend>Alert Plugin settings</legend>
-<p><b>Purge archived alert reports older than</b> <%= text_field_tag 'settings[purge_archive_interval]', @settings['purge_archive_interval'], :size => 2 %> <b>days</b></p>
-<%= link_to 'Administer categories', :controller => :alert_categories, :action => 'index' %>
-</fieldset>

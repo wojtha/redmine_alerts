@@ -1,2 +1,35 @@
+# Redmine Alerts plugin
 # Language file for Rails version < 2.2.2
-my_alerts_title: My Alerts
+
+title_my_alerts: My Alerts
+title_my_alert_definitions: My Alert Definitons
+title_my_reports: My Reports
+title_my_alert_reports: My Alert Reports
+title_my_archived_reports: My Archived Reports
+title_alert_plugin_configuration: Alerts plugin configuration
+title_alert_categories_configuration: Manage alert and report categories
+title_category_new: New category
+title_category_edit: Editing category
+title_alert_new: New alert
+title_alert_edit: Editing alert
+
+label_color: Color
+label_specific_projects: Specific projects
+
+field_projects: Projects
+field_entity: Entity
+field_delta: Delta
+field_alert_description: Watch for
+
+button_show: Show
+button_add_new_category: Add new category
+button_back_to_plugin: Back to plugin administration
+button_reports_archived_view_all: View all archived reports
+button_reports_active_view_all: View all active reports
+button_reports_view_all: View all reports
+button_unarchive: Mark as active
+button_alert_add: New alert
+
+text_archived_reports_purge_warning: Please note, that old reports moved to the archive folder are purged regularly!
+text_alert_categories_configuration_description: Delete operation does not care about association to alerts and reports. You must know what you are doing!
+text_general_built_in: built-in

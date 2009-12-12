@@ -1,12 +1,12 @@
-<h2>My Alert Definitons</h2>
+<h2><%= l(:title_my_alert_definitions) %></h2>
 
 <table class="atable">
   <tr>
-    <th>Category</th>
-    <th>Entity</th>
-    <th>Description</th>
-    <th>Projects</th>
-    <th>Updated on</th>
+    <th><%= l(:field_category) %></th>
+    <th><%= l(:field_entity) %></th>
+    <th><%= l(:field_description) %></th>
+    <th<%= l(:field_projects) %></th>
+    <th><%= l(:field_updated_on) %></th>
   </tr>
 
 <% @alerts.each do |alert| %>
@@ -18,13 +18,13 @@
       <%= render :partial => 'projects', :locals => {:alert => alert } %>
     </td>
     <td><%= format_date(alert.updated_on) %></td>
-    <td><%= link_to 'Show', alert, :class => 'icon icon-report' %>
-    <%= link_to 'Edit', edit_alert_path(alert), :class => 'icon icon-edit' %>
-    <%= link_to 'Delete', alert, :confirm => 'Are you sure?', :method => :delete, :class => 'icon icon-del' %></td>
+    <td><%= link_to l(:button_show), alert, :class => 'icon icon-report' %>
+    <%= link_to l(:button_edit), edit_alert_path(alert), :class => 'icon icon-edit' %>
+    <%= link_to l(:button_delete), alert, :confirm => l(:text_are_you_sure), :method => :delete, :class => 'icon icon-del' %></td>
   </tr>
 <% end %>
 </table>
-<p><%= link_to 'New alert', { :action => 'new' }, :class => 'icon icon-add' %></p>
+<p><%= link_to l(:button_alert_add), { :action => 'new' }, :class => 'icon icon-add' %></p>
 
 <% content_for :header_tags do %>
   <%= stylesheet_link_tag "alerts.css", :plugin => "redmine_alerts", :media => "screen" %>

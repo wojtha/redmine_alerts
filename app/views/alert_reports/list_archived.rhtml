@@ -1,5 +1,5 @@
-<h2>My Archived Reports</h2>
-<p><em class="icon icon-warning">Please note, that old reports moved to the archive folder are purged regularly!</em></p>
+<h2><%= l(:title_my_archived_reports) %></h2>
+<p><em class="icon icon-warning"><%= l(:text_archived_reports_purge_warning) %></em></p>
 <table class="rtable">
 <% if @reports.any? %>
 <% @reports.each do |report| %>
@@ -7,15 +7,15 @@
     <td><%= format_date(report.created_on) %></td>
     <td><%=h report.alert.category.name %>:</td>
     <td><%= report.text %></td>
-    <td><%= link_to 'Mark as active', { :action => :unarchive, :id => report.id }, :confirm => 'Are you sure?', :method => :post, :class => 'icon icon-move' %></td>
+    <td><%= link_to l(:button_unarchive), { :action => :unarchive, :id => report.id }, :confirm => l(:text_are_you_sure), :method => :post, :class => 'icon icon-move' %></td>
   </tr>
 <% end %>
 </table>
 <% else %>
-<p class="nodata">No archived reports</p>
+<p class="nodata"><%= l(:label_no_data) %></p>
 <% end %>
 <div>
-<%= link_to 'View all active reports', { :action => :index }, :class => 'icon icon-folder' %>
+<%= link_to l(:button_reports_active_view_all), { :action => :index }, :class => 'icon icon-folder' %>
 </div>
 
 <% content_for :header_tags do %>

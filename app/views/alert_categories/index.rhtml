@@ -1,22 +1,22 @@
-<h1>Alerts plugin configuration</h1>
-<h3>Alert and report categories</h3>
+<h1><%= l(:title_alert_plugin_configuration) %></h1>
+<h3><%= l(:title_alert_categories_configuration) %></h3>
 <p>
-<em>Delete operation does not care about association to alerts and reports. You must know what you are doing!</em>
+<em><%= l(:text_alert_categories_configuration_description) %></em>
 </p>
 <table class="list">
 <% for category in @categories %>
   <% built_in = category.id < 3 ? true : false %>
   <tr class="<%= cycle('odd', 'even') %>">
-    <td><%=h category.name %><%= built_in ? " <em>(built-in)</em>" : '' %></td>
-    <td style="color:#<%=h category.color %>">Color #<%=h category.color %></td>
-    <td><%= link_to('Edit', edit_alert_category_path(category), :class => 'icon icon-edit') unless category.is_builtin? %>
-        <%= link_to('Delete', category, :confirm => 'Are you sure?', :method => :delete, :class => 'icon icon-del') unless category.is_builtin? %></td>
+    <td><%=h category.name %><%= built_in ? " <em>(#{l(:text_general_built_in)})</em>" : '' %></td>
+    <td style="color:#<%=h category.color %>"><%= l(:label_color) %> #<%=h category.color %></td>
+    <td><%= link_to(l(:button_edit), edit_alert_category_path(category), :class => 'icon icon-edit') unless category.is_builtin? %>
+        <%= link_to(l(:button_delete), category, :confirm => l(:text_are_you_sure), :method => :delete, :class => 'icon icon-del') unless category.is_builtin? %></td>
   </tr>
 <% end %>
 </table>
 <p>
-<%= link_to 'New category', { :action => 'new' }, :class => 'icon icon-add' %>
+<%= link_to(l(:button_add_new_category), { :action => 'new' }, :class => 'icon icon-add') %>
 </p>
 <p>
-<%= link_to 'Back to plugin administration', { :controller => :settings, :action => 'plugin', :id => :redmine_alerts }, :class => 'icon icon-cancel' %>
+<%= link_to(l(:button_back_to_plugin), { :controller => :settings, :action => 'plugin', :id => :redmine_alerts }, :class => 'icon icon-cancel') %>
 </p>
