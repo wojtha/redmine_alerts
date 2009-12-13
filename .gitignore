@@ -1,0 +1,4 @@
+.*            # Ignore all dotfiles...
+!.gitignore   # except for .gitignore
+
+*~    # Ignore all temporary files
